@@ -1,0 +1,95 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Reservasi Ruangan Kampus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans p-6 md:p-10">
+    
+    <div class="max-w-7xl mx-auto">
+        
+        
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-blue-900 mb-2">Sistem Reservasi Ruangan</h1>
+            <p class="text-slate-500">Manajemen Peminjaman Fasilitas Kampus</p>
+        </div>
+
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+            <h2 class="text-lg font-semibold text-slate-700 mb-4 border-b pb-3">Buat Reservasi Baru</h2>
+            
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <input type="text" id="peminjam" placeholder="Nama Peminjam" required class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                <input type="text" id="nim" placeholder="NIM" required class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                
+                <select id="semester" class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white">
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                </select>
+
+                <select id="gedung" class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white">
+                    <option value="Gedung A">Gedung A</option>
+                    <option value="Gedung B">Gedung B</option>
+                    <option value="Gedung C">Gedung C</option>
+                </select>
+
+                <select id="lantai" class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white">
+                    <option value="Lantai 1">Lantai 1</option>
+                    <option value="Lantai 2">Lantai 2</option>
+                    <option value="Lantai 3">Lantai 3</option>
+                    <option value="Lantai 4">Lantai 4</option>
+                    <option value="Lantai 5">Lantai 5</option>
+                    <option value="Lantai 6">Lantai 6</option>
+                    <option value="Lantai 7">Lantai 7</option>
+                    <option value="Lantai 8">Lantai 8</option>
+                </select>
+
+                <input type="text" id="ruangan" placeholder="Ruangan (Misal: 311)" required class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                
+                <input type="text" id="waktu" placeholder="Waktu (Misal: Jumat, 09:00)" required class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                
+                <input type="text" id="keperluan" placeholder="Keperluan Peminjaman" required class="border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+
+                
+                <button onclick="tambahReservasi()" class="col-span-1 md:col-span-2 lg:col-span-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm mt-2">
+                    Pesan Ruangan
+                </button>
+            </div>
+        </div>
+
+        
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-blue-900 text-white text-sm">
+                        <tr>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">ID</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Peminjam</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">NIM</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Semester</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Gedung</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Lantai</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Ruangan</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Waktu</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Keperluan</th>
+                            <th class="py-3 px-4 font-semibold whitespace-nowrap">Status</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="daftar-reservasi" class="text-sm text-slate-700 divide-y divide-slate-200">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="script.js"></script>
+</body>
+</html>
